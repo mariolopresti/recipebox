@@ -1,7 +1,5 @@
 @if (recipe(); as recipie) {
 <div class="recipe-detail">
-  <a routerLink="/">← Torna alla home</a>
-
   <h2>{{ recipie.nome }}</h2>
   <img [src]="recipie.immagine" [alt]="recipie.nome" class="recipe-detail-image" />
 

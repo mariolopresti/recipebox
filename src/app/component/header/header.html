@@ -5,8 +5,8 @@
     </div>
 
     <nav class="nav">
-        <a routerLink="">Home</a>
-        <a routerLink="/ricette">Ricette</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+       <a routerLink="/ricette">Ricette</a>
     </nav>
 
     <div class="search">

@@ -1,0 +1,16 @@
+@for(recipie of recipies; track recipie; let i = $index){
+
+<div class="recipe-container">
+    <div class="recipe-card">
+        <img [src]="recipie.immagine" alt="{{ recipie.nome }}" class="recipe-image">
+        <div class="recipe-content">
+            <h3>{{ recipie.nome }}</h3>
+            <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
+            <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
+            <p><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
+        </div>
+    </div>
+</div>
+
+
+}

@@ -5,4 +5,6 @@ export interface Recipe {
   tempoPreparazione: number;
   difficolta: string;
   immagine: string;
+  descrizione: string;
+  preparazione: string;
 }

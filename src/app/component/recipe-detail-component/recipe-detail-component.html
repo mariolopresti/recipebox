@@ -1,14 +1,16 @@
 @if (recipe(); as recipie) {
-  <div class="recipe-detail">
-    <a routerLink="/">← Torna alla home</a>
+<div class="recipe-detail">
+  <a routerLink="/">← Torna alla home</a>
 
-    <h2>{{ recipie.nome }}</h2>
-    <img [src]="recipie.immagine" [alt]="recipie.nome" class="recipe-detail-image" />
+  <h2>{{ recipie.nome }}</h2>
+  <img [src]="recipie.immagine" [alt]="recipie.nome" class="recipe-detail-image" />
 
-    <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
-    <p><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
-    <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
-  </div>
+  <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
+  <p><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
+  <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
+  <p><strong>Descrizione:</strong> {{ recipie.descrizione }}</p>
+  <p><strong>Preparazione:</strong> {{ recipie.preparazione }}</p>
+</div>
 } @else {
-  <p>Ricetta non trovata.</p>
+<p>Ricetta non trovata.</p>
 }

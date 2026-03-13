@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Recipe } from '../../interfaces/recipe';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-component',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './recipe-component.html',
   styleUrl: './recipe-component.css',
 })
 export class RecipeComponent {
-
   recipies: Recipe[] = [
     {
       id: 1,

@@ -6,8 +6,8 @@ import { Recipe } from '../interfaces/recipe';
   providedIn: 'root',
 })
 export class RecipeService {
-
   searchValue = signal('');
+  selectedDifficulty = signal('Tutte');
 
   recipies = signal<Recipe[]>([
     {
@@ -207,6 +207,11 @@ export class RecipeService {
 
   setSearchValue(value: string): void {
     this.searchValue.set(value);
+  }
+
+  setDifficultyValue(value: string): void {
+    console.log("set difficulty value: ", value);
+    this.selectedDifficulty.set(value);
   }
 
   getRecipeById(id: number): Recipe | undefined {

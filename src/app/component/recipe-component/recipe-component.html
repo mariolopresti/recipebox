@@ -1,5 +1,5 @@
 <div class="recipe-container">
-  @for (recipie of recipies; track recipie; let i = $index) {
+  @for (recipie of recipes(); track recipie; let i = $index) {
     <a class="recipe-card" [routerLink]="['/recipes', recipie.id]">
       <div class="recipe-card">
         <img [src]="recipie.immagine" alt="{{ recipie.nome }}" class="recipe-image" />

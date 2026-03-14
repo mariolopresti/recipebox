@@ -10,7 +10,10 @@
     </nav>
 
     <div class="search">
-        <input type="text" placeholder="Cerca ricetta..." />
+        <input type="text" placeholder="Cerca ricetta..."
+               [ngModel]="recipeService.searchValue()"
+               (ngModelChange)="recipeService.setSearchValue($event)"
+        />
     </div>
 
 </header>

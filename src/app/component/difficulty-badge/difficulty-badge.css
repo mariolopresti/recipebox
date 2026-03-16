@@ -1,0 +1,13 @@
+button {
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.Easy {
+    background: #d4edda;
+}
+
+.Hard {
+    background: #f8d7da;
+}

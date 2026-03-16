@@ -6,14 +6,20 @@ import { FilterByName } from '../../directives/filter-by-name';
 import { DifficultyFilterComponent } from '../difficulty-filter-component/difficulty-filter-component';
 import { FilterDifficulty } from '../../directives/filter-difficulty';
 import { NgClass } from '@angular/common';
+import { DifficultyBadgeComponent } from '../difficulty-badge/difficulty-badge';
 
 @Component({
   selector: 'app-recipe-component',
-  imports: [RouterLink, FilterByName, DifficultyFilterComponent, FilterDifficulty, NgClass],
+  imports: [RouterLink, FilterByName, DifficultyFilterComponent, FilterDifficulty, NgClass, DifficultyBadgeComponent],
   templateUrl: './recipe-component.html',
   styleUrl: './recipe-component.css',
 })
 export class RecipeComponent {
   recipeService = inject(RecipeService);
   recipes = this.recipeService.recipies;
+
+  filterDifficulty(level: string) {
+    this.recipeService.setDifficultyValue(level);
+  }
+
 }

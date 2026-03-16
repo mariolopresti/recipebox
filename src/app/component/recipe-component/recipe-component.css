@@ -21,8 +21,11 @@
 
 a {
     text-decoration: none;
+    display: block;
+    /* importante per rimuovere spazio inline */
 }
 
+/* Hover effetto */
 .recipe-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
@@ -35,6 +38,15 @@ a {
     height: 220px;
     object-fit: cover;
     display: block;
+    /* rimuove lo spazio bianco */
+}
+
+/* Contenitore immagine-link */
+.recipe-card img {
+    display: block;
+    /* assicura che anche eventuali immagini non inline siano block */
+    vertical-align: bottom;
+    /* ulteriore sicurezza */
 }
 
 /* Contenuto testo */
@@ -59,27 +71,28 @@ a {
 .recipe-content strong {
     color: #222;
 }
+
+/* Badge difficoltà */
 .facile,
 .medio,
 .difficile {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-weight: bolder;
-  color: black !important;
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bolder;
+    color: black !important;
 }
 
-/* Colori specifici */
 .facile {
-  background: linear-gradient(135deg, #00a000, #00c854);
+    background: linear-gradient(135deg, #00a000, #00c854);
 }
 
 .medio {
-  background: linear-gradient(135deg, #fbc02d, #ffeb3b);
+    background: linear-gradient(135deg, #fbc02d, #ffeb3b);
 }
 
 .difficile {
-  background: linear-gradient(135deg, #d50000, #ff5252);
+    background: linear-gradient(135deg, #d50000, #ff5252);
 }
 
 /* Tablet */

@@ -1,10 +1,11 @@
 import { Component, computed, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { RecipeService } from '../../services/recipe-service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-recipe-detail-component',
-  imports: [RouterLink],
+  imports: [RouterLink, NgClass],
   templateUrl: './recipe-detail-component.html',
   styleUrl: './recipe-detail-component.css',
 })

@@ -1,23 +1,16 @@
-<h1>Nuova ricetta!</h1>
+<h1>Inserisci una nuova ricetta!</h1>
 
 <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
   <!-- NOME -->
   <div>
-    <label for="name">Name</label>
-    <input
-      #nameCtrl="ngModel"
-      type="text"
-      name="nome"
-      [(ngModel)]="recipe.nome"
-      required
-      minlength="3"
-    />
+    <label for="name">Nome</label>
+    <input #nameCtrl="ngModel" type="text" name="nome" [(ngModel)]="recipe.nome" required minlength="3" />
     <div class="message-container">
       @if (nameCtrl.errors?.['required'] && nameCtrl.touched) {
-        <span class="error">Name is required</span>
+      <span class="error">Name is required</span>
       }
       @if (nameCtrl.errors?.['minlength'] && nameCtrl.touched) {
-        <span class="error">Minimo 3 caratteri.</span>
+      <span class="error">Minimo 3 caratteri.</span>
       }
     </div>
   </div>
@@ -25,16 +18,10 @@
   <!-- INGREDIENTI -->
   <div>
     <label for="ingredienti">Ingredienti</label>
-    <input
-      #ingredientiCtrl="ngModel"
-      type="text"
-      name="ingredienti"
-      [(ngModel)]="recipe.ingredienti"
-      required
-    />
+    <input #ingredientiCtrl="ngModel" type="text" name="ingredienti" [(ngModel)]="recipe.ingredienti" required />
     <div class="message-container">
       @if (ingredientiCtrl.errors?.['required'] && ingredientiCtrl.touched) {
-        <span class="error">Ingredient is required</span>
+      <span class="error">Ingredient is required</span>
       }
     </div>
   </div>
@@ -42,20 +29,14 @@
   <!-- TEMPO PREPARAZIONE -->
   <div>
     <label for="tempoPreparazione">Tempo Preparazione (minuti)</label>
-    <input
-      #tempoPreparazioneCtrl="ngModel"
-      type="number"
-      name="tempoPreparazione"
-      [(ngModel)]="recipe.tempoPreparazione"
-      required
-      min="1"
-    />
+    <input #tempoPreparazioneCtrl="ngModel" type="number" name="tempoPreparazione"
+      [(ngModel)]="recipe.tempoPreparazione" required min="1" />
     <div class="message-container">
       @if (tempoPreparazioneCtrl.errors?.['required'] && tempoPreparazioneCtrl.touched) {
-        <span class="error">Tempo preparazione required</span>
+      <span class="error">Tempo preparazione required</span>
       }
       @if (tempoPreparazioneCtrl.errors?.['min'] && tempoPreparazioneCtrl.touched) {
-        <span class="error">Minimo 1 minuto.</span>
+      <span class="error">Minimo 1 minuto.</span>
       }
     </div>
   </div>
@@ -63,12 +44,7 @@
   <!-- DIFFICOLTA -->
   <div>
     <label for="difficolta">Difficoltà</label>
-    <select
-      #difficoltaCtrl="ngModel"
-      name="difficolta"
-      [(ngModel)]="recipe.difficolta"
-      required
-    >
+    <select #difficoltaCtrl="ngModel" name="difficolta" [(ngModel)]="recipe.difficolta" required>
       <option value="" disabled selected>Seleziona difficoltà</option>
       <option value="Facile">Facile</option>
       <option value="Media">Media</option>
@@ -76,7 +52,7 @@
     </select>
     <div class="message-container">
       @if (difficoltaCtrl.errors?.['required'] && difficoltaCtrl.touched) {
-        <span class="error">La difficoltà è obbligatoria.</span>
+      <span class="error">La difficoltà è obbligatoria.</span>
       }
     </div>
   </div>
@@ -84,16 +60,10 @@
   <!-- IMMAGINE -->
   <div>
     <label for="immagine">URL Immagine</label>
-    <input
-      #immagineCtrl="ngModel"
-      type="text"
-      name="immagine"
-      [(ngModel)]="recipe.immagine"
-      required
-    />
+    <input #immagineCtrl="ngModel" type="text" name="immagine" [(ngModel)]="recipe.immagine" required />
     <div class="message-container">
       @if (immagineCtrl.errors?.['required'] && immagineCtrl.touched) {
-        <span class="error">L'URL dell'immagine è obbligatorio.</span>
+      <span class="error">L'URL dell'immagine è obbligatorio.</span>
       }
     </div>
   </div>
@@ -101,20 +71,14 @@
   <!-- DESCRIZIONE -->
   <div>
     <label for="descrizione">Descrizione</label>
-    <textarea
-      #descrizioneCtrl="ngModel"
-      name="descrizione"
-      [(ngModel)]="recipe.descrizione"
-      required
-      minlength="10"
-      rows="3"
-    ></textarea>
+    <textarea #descrizioneCtrl="ngModel" name="descrizione" [(ngModel)]="recipe.descrizione" required minlength="10"
+      rows="3"></textarea>
     <div class="message-container">
       @if (descrizioneCtrl.errors?.['required'] && descrizioneCtrl.touched) {
-        <span class="error">La descrizione è obbligatoria.</span>
+      <span class="error">La descrizione è obbligatoria.</span>
       }
       @if (descrizioneCtrl.errors?.['minlength'] && descrizioneCtrl.touched) {
-        <span class="error">Minimo 10 caratteri.</span>
+      <span class="error">Minimo 10 caratteri.</span>
       }
     </div>
   </div>
@@ -122,20 +86,14 @@
   <!-- PREPARAZIONE -->
   <div>
     <label for="preparazione">Preparazione</label>
-    <textarea
-      #preparazioneCtrl="ngModel"
-      name="preparazione"
-      [(ngModel)]="recipe.preparazione"
-      required
-      minlength="10"
-      rows="5"
-    ></textarea>
+    <textarea #preparazioneCtrl="ngModel" name="preparazione" [(ngModel)]="recipe.preparazione" required minlength="10"
+      rows="5"></textarea>
     <div class="message-container">
       @if (preparazioneCtrl.errors?.['required'] && preparazioneCtrl.touched) {
-        <span class="error">La preparazione è obbligatoria.</span>
+      <span class="error">La preparazione è obbligatoria.</span>
       }
       @if (preparazioneCtrl.errors?.['minlength'] && preparazioneCtrl.touched) {
-        <span class="error">Minimo 10 caratteri.</span>
+      <span class="error">Minimo 10 caratteri.</span>
       }
     </div>
   </div>
@@ -144,7 +102,7 @@
   <button type="submit" [disabled]="regForm.invalid">Inserisci ricetta!</button>
   <div class="message-container">
     @if (submitted) {
-      <span class="success">Nuova ricetta inserita!</span>
+    <span class="success">Nuova ricetta inserita!</span>
     }
   </div>
 </form>

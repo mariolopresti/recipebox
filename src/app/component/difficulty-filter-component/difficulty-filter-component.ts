@@ -16,4 +16,5 @@ export class DifficultyFilterComponent {
   onDifficultyChange(value: string) {
     this.recipeService.setDifficultyValue(value);
   }
+
 }

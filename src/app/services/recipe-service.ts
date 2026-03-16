@@ -217,4 +217,19 @@ export class RecipeService {
   getRecipeById(id: number): Recipe | undefined {
     return this.recipies().find((recipe) => recipe.id === id);
   }
+
+  addRecipe (recipe: Recipe) {
+    // trasformo la stringa in array
+    const ingredientiArray = (recipe.ingredienti || '').toString()
+      .split(',')
+      .map((i: string) => i.trim())
+      .filter((i: string) => i.length > 0);
+
+    const recipeToSave = {
+      ...recipe,
+      ingredienti: ingredientiArray, // qui diventa string[]
+    };
+    this.recipies.update((recipies) => [...recipies, recipeToSave]);
+
+  }
 }

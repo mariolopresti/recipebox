@@ -1,17 +1,20 @@
+<app-difficulty-filter></app-difficulty-filter>
 <div class="recipe-container">
-  @for (recipie of recipes(); track recipie; let i = $index) {
+  @for (recipie of recipes(); track recipie.id; let i = $index) {
     <ng-container *appFilterByName="recipie.nome">
-      <a class="recipe-card" [routerLink]="['/recipes', recipie.id]">
-        <div class="recipe-card">
-          <img [src]="recipie.immagine" alt="{{ recipie.nome }}" class="recipe-image" />
-          <div class="recipe-content">
-            <h3>{{ recipie.nome }}</h3>
-            <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
-            <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
-            <p><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
+      <ng-container *appFilterDifficulty="recipie.difficolta">
+        <a class="recipe-card" [routerLink]="['/recipes', recipie.id]">
+          <div class="recipe-card">
+            <img [src]="recipie.immagine" alt="{{ recipie.nome }}" class="recipe-image" />
+            <div class="recipe-content">
+              <h3>{{ recipie.nome }}</h3>
+              <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
+              <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
+              <p><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
+            </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </ng-container>
     </ng-container>
   }
 </div>

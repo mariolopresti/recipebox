@@ -1,0 +1,14 @@
+<div class="difficulty-filter">
+  <label for="difficulty">Filtra per difficoltà:</label>
+  <select
+    id="difficulty"
+    [ngModel]="recipeService.selectedDifficulty()"
+    (ngModelChange)="recipeService.setDifficultyValue($event)"
+  >
+    @for (difficulty of difficulties; track difficulty) {
+      <option [value]="difficulty">
+        {{ difficulty }}
+      </option>
+    }
+  </select>
+</div>

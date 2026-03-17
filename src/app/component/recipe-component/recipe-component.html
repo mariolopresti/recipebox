@@ -1,20 +1,31 @@
 <app-difficulty-filter></app-difficulty-filter>
 <div class="recipe-container">
   @for (recipie of recipes(); track recipie.id; let i = $index) {
-    <ng-container *appFilterByName="recipie.nome">
-      <ng-container *appFilterDifficulty="recipie.difficolta">
-        <a class="recipe-card" [routerLink]="['/recipes', recipie.id]">
-          <div class="recipe-card">
-            <img [src]="recipie.immagine" alt="{{ recipie.nome }}" class="recipe-image" />
-            <div class="recipe-content">
-              <h3>{{ recipie.nome }}</h3>
-              <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
-              <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
-              <p><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
-            </div>
-          </div>
-        </a>
-      </ng-container>
+  <ng-container *appFilterByName="recipie.nome">
+    <ng-container *appFilterDifficulty="recipie.difficolta">
+
+      <div class="recipe-card">
+        <a class="recipe-card" [routerLink]="['/recipes', recipie.id]"> <img [src]="recipie.immagine"
+            alt="{{ recipie.nome }}" class="recipe-image" /> </a>
+        <div class="recipe-content">
+          <h3>{{ recipie.nome }}</h3>
+          <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
+          <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
+
+
+          <p (click)="filterDifficulty(recipie.difficolta)" [ngClass]="{
+                  'facile': recipie.difficolta === 'Facile',
+                  'medio': recipie.difficolta === 'Media',
+                  'difficile': recipie.difficolta === 'Difficile'
+                }"><strong>Difficoltà:</strong>
+            <app-difficulty-badge [level]="recipie.difficolta" (badgeClick)="filterDifficulty($event)">
+            </app-difficulty-badge>
+
+          </p>
+        </div>
+
+      </div>
     </ng-container>
+  </ng-container>
   }
 </div>

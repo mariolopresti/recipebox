@@ -4,7 +4,11 @@
   <img [src]="recipie.immagine" [alt]="recipie.nome" class="recipe-detail-image" />
 
   <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
-  <p><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
+  <p [ngClass]="{
+                  'facile': recipie.difficolta === 'Facile',
+                  'medio': recipie.difficolta === 'Media',
+                  'difficile': recipie.difficolta === 'Difficile'
+                }"><strong>Difficoltà:</strong> {{ recipie.difficolta }}</p>
   <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
   <p><strong>Descrizione:</strong> {{ recipie.descrizione }}</p>
   <p><strong>Preparazione:</strong> {{ recipie.preparazione }}</p>

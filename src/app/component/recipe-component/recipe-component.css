@@ -21,6 +21,7 @@
 
 a {
     text-decoration: none;
+    display: block;
 }
 
 .recipe-card:hover {
@@ -37,7 +38,10 @@ a {
     display: block;
 }
 
-/* Contenuto testo */
+.recipe-card img {
+    display: block;
+}
+
 .recipe-content {
     padding: 18px;
 }
@@ -58,6 +62,29 @@ a {
 
 .recipe-content strong {
     color: #222;
+}
+
+/* Badge difficoltà */
+.facile,
+.medio,
+.difficile {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bolder;
+    color: black !important;
+}
+
+.facile {
+    background: linear-gradient(135deg, #00a000, #00c854);
+}
+
+.medio {
+    background: linear-gradient(135deg, #fbc02d, #ffeb3b);
+}
+
+.difficile {
+    background: linear-gradient(135deg, #d50000, #ff5252);
 }
 
 /* Tablet */

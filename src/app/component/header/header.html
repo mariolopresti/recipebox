@@ -11,15 +11,15 @@
 
   <div class="search">
     <input type="text" placeholder="Cerca ricetta..." [ngModel]="recipeService.searchValue()"
-           (ngModelChange)="recipeService.setSearchValue($event)" />
+      (ngModelChange)="recipeService.setSearchValue($event)" />
   </div>
 
 
   @if (authService.currentUser(); as user) {
-    <span>Benvenuto, {{ user.username }}!</span>
-    <button (click)="authService.logout()">Logout</button>
+  <span>Benvenuto, {{ user.username }}!</span>
+  <button (click)="authService.logout()" class="login">Logout</button>
   } @else {
-    <a routerLink="/login">Accedi</a>
+  <a class="login" routerLink="/login">Accedi</a>
   }
 
 </header>

@@ -1,6 +1,6 @@
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 40px 30px;
   background: #ff6b35;
@@ -37,6 +37,24 @@ nav a:hover {
   border: none;
   outline: none;
 }
+
+.login {
+  text-decoration: none;
+  color: #ff6b35;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.login:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
 
 @media (max-width:690px) {
   .header {

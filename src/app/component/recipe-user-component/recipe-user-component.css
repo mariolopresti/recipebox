@@ -1,0 +1,27 @@
+/* Container generale */
+.recipe-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .recipe-container {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .recipe-container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    gap: 16px;
+  }
+}

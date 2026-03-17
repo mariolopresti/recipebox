@@ -37,7 +37,7 @@ export class RecipeService {
     );
   }
 
-/*  // ... existing code ...
+  /*  // ... existing code ...
   recipies = signal<Recipe[]>([
     {
       id: 1,
@@ -243,14 +243,14 @@ export class RecipeService {
     this.selectedDifficulty.set(value);
   }
 
-/*  getRecipeById(id: number): Recipe | undefined {
-    return this.recipies().find((recipe) => recipe.id === id);
+  getRecipeById(id: number): Recipe | undefined {
+    return this.recipies.value()?.find((recipe) => recipe.id === id);
   }
-
-  addRecipe(recipe: Recipe) {
-    // trasformo la stringa in array
-    this.recipies.update((recipies) => [...recipies, recipe]);
-  }*/
+  /*
+    addRecipe(recipe: Recipe) {
+      // trasformo la stringa in array
+      this.recipies.update((recipies) => [...recipies, recipe]);
+    }*/
 
   // constructor(private recipeService: RecipeService) { }
 

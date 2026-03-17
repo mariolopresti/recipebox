@@ -1,6 +1,10 @@
 <app-difficulty-filter></app-difficulty-filter>
 <div class="recipe-container">
   @for (recipe of userRecipes(); track recipe.id; let i = $index) {
-    <app-recipe-card [recipe]="recipe"></app-recipe-card>
+    <ng-container *appFilterByName="recipe.nome">
+      <ng-container *appFilterDifficulty="recipe.difficolta">
+        <app-recipe-card [recipe]="recipe"></app-recipe-card>
+      </ng-container>
+    </ng-container>
   }
 </div>

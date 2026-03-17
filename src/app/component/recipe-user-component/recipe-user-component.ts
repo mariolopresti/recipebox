@@ -1,19 +1,14 @@
 import { Component, computed, inject } from '@angular/core';
 import { RecipeService } from '../../services/recipe-service';
 import { AuthService } from '../../services/auth-service';
-import { DifficultyBadgeComponent } from '../difficulty-badge/difficulty-badge';
 import { DifficultyFilterComponent } from '../difficulty-filter-component/difficulty-filter-component';
+import { RecipeCardComponent } from '../recipe-card-component/recipe-card-component';
 import { FilterByName } from '../../directives/filter-by-name';
 import { FilterDifficulty } from '../../directives/filter-difficulty';
-import { RouterLink } from '@angular/router';
-import { RecipeCardComponent } from '../recipe-card-component/recipe-card-component';
 
 @Component({
   selector: 'app-recipe-user-component',
-  imports: [
-    DifficultyFilterComponent,
-    RecipeCardComponent,
-  ],
+  imports: [DifficultyFilterComponent, RecipeCardComponent, FilterByName, FilterDifficulty],
   templateUrl: './recipe-user-component.html',
   styleUrl: './recipe-user-component.css',
 })

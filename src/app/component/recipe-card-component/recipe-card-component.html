@@ -1,24 +1,19 @@
-<ng-container *appFilterByName="recipe().nome">
-  <ng-container *appFilterDifficulty="recipe().difficolta">
+<div class="recipe-card">
+  <a class="recipe-card" [routerLink]="['/recipes', recipe().id]">
+    <img [src]="recipe().immagine" alt="{{ recipe().nome }}" class="recipe-image" />
+  </a>
+  <div class="recipe-content">
+    <h3>{{ recipe().nome }}</h3>
+    <p><strong>Ingredienti:</strong> {{ recipe().ingredienti }}</p>
+    <p><strong>Tempo:</strong> {{ recipe().tempoPreparazione }} min</p>
 
-    <div class="recipe-card">
-      <a class="recipe-card" [routerLink]="['/recipes', recipe().id]">
-        <img [src]="recipe().immagine" alt="{{ recipe().nome }}" class="recipe-image" />
-      </a>
-      <div class="recipe-content">
-        <h3>{{ recipe().nome }}</h3>
-        <p><strong>Ingredienti:</strong> {{ recipe().ingredienti }}</p>
-        <p><strong>Tempo:</strong> {{ recipe().tempoPreparazione }} min</p>
-
-        <p (click)="filterDifficulty(recipe().difficolta)" [ngClass]="{
+    <p (click)="filterDifficulty(recipe().difficolta)" [ngClass]="{
                 'facile': recipe().difficolta === 'Facile',
                 'medio': recipe().difficolta === 'Media',
                 'difficile': recipe().difficolta === 'Difficile'
               }"><strong>Difficoltà:</strong>
-          <app-difficulty-badge [level]="recipe().difficolta" (badgeClick)="filterDifficulty($event)">
-          </app-difficulty-badge>
-        </p>
-      </div>
-    </div>
-  </ng-container>
-</ng-container>
+      <app-difficulty-badge [level]="recipe().difficolta" (badgeClick)="filterDifficulty($event)">
+      </app-difficulty-badge>
+    </p>
+  </div>
+</div>

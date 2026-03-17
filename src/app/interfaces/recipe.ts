@@ -7,4 +7,5 @@ export interface Recipe {
   immagine: string;
   descrizione: string;
   preparazione: string;
+  id_user: number;
 }

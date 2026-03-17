@@ -18,7 +18,7 @@ export class AuthService {
       tap((user) => {
         // Se il login ha successo, salviamo l'utente nel Signal
         console.log("user logged in", user);
-        this.currentUser.set({ "username": user.username });
+        this.currentUser.set(user);
       }),
     );
   }

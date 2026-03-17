@@ -6,7 +6,12 @@
 
   <nav class="nav">
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-    <a routerLink="/recipe-form" routerLinkActive="active">Nuova Ricetta</a>
+
+    @if (authService.currentUser()){
+      <a routerLink="/recipe-user" routerLinkActive="active">Le mie Ricette</a>
+      <a routerLink="/recipe-form" routerLinkActive="active">Nuova Ricetta</a>
+    }
+
   </nav>
 
   <div class="search">

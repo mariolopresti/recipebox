@@ -7,16 +7,13 @@ import { DifficultyFilterComponent } from '../difficulty-filter-component/diffic
 import { FilterDifficulty } from '../../directives/filter-difficulty';
 import { NgClass } from '@angular/common';
 import { DifficultyBadgeComponent } from '../difficulty-badge/difficulty-badge';
+import { RecipeCardComponent } from '../recipe-card-component/recipe-card-component';
 
 @Component({
   selector: 'app-recipe-component',
   imports: [
-    RouterLink,
-    FilterByName,
     DifficultyFilterComponent,
-    FilterDifficulty,
-    NgClass,
-    DifficultyBadgeComponent,
+    RecipeCardComponent,
   ],
   templateUrl: './recipe-component.html',
   styleUrl: './recipe-component.css',
@@ -48,9 +45,5 @@ export class RecipeComponent {
         this.loading.set(false);
       },
     });
-  }
-
-  filterDifficulty(level: string) {
-    this.recipeService.setDifficultyValue(level);
   }
 }

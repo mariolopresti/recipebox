@@ -1,6 +1,6 @@
 <app-difficulty-filter></app-difficulty-filter>
 <div class="recipe-container">
-  @for (recipe of recipes(); track recipe.id; let i = $index) {
+  @for (recipe of userRecipes(); track recipe.id; let i = $index) {
     <app-recipe-card [recipe]="recipe"></app-recipe-card>
   }
 </div>

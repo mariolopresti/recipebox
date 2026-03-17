@@ -1,17 +1,25 @@
 <header class="header">
 
-    <h2>
-        🍳 RecipeBox
-    </h2>
+  <h2>
+    🍳 RecipeBox
+  </h2>
 
-    <nav class="nav">
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-        <a routerLink="/recipe-form" routerLinkActive="active">Nuova Ricetta</a>
-    </nav>
+  <nav class="nav">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+    <a routerLink="/recipe-form" routerLinkActive="active">Nuova Ricetta</a>
+  </nav>
 
-    <div class="search">
-        <input type="text" placeholder="Cerca ricetta..." [ngModel]="recipeService.searchValue()"
-            (ngModelChange)="recipeService.setSearchValue($event)" />
-    </div>
+  <div class="search">
+    <input type="text" placeholder="Cerca ricetta..." [ngModel]="recipeService.searchValue()"
+           (ngModelChange)="recipeService.setSearchValue($event)" />
+  </div>
+
+
+  @if (authService.currentUser(); as user) {
+    <span>Benvenuto, {{ user.username }}!</span>
+    <button (click)="authService.logout()">Logout</button>
+  } @else {
+    <a routerLink="/login">Accedi</a>
+  }
 
 </header>

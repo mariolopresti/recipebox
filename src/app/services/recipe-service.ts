@@ -218,7 +218,7 @@ export class RecipeService {
     return this.recipies().find((recipe) => recipe.id === id);
   }
 
-  addRecipe (recipe: Recipe) {
+  addRecipe(recipe: Recipe) {
     // trasformo la stringa in array
     const ingredientiArray = (recipe.ingredienti || '').toString()
       .split(',')
@@ -231,5 +231,11 @@ export class RecipeService {
     };
     this.recipies.update((recipies) => [...recipies, recipeToSave]);
 
+  }
+
+  // constructor(private recipeService: RecipeService) { }
+
+  filterDifficulty(level: string) {
+    this.setDifficultyValue(level);
   }
 }

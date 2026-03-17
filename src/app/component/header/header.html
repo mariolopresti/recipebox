@@ -1,19 +1,17 @@
 <header class="header">
 
-    <div class="logo">
+    <h2>
         🍳 RecipeBox
-    </div>
+    </h2>
 
     <nav class="nav">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
-       <a routerLink="/recipe-form">Nuova Ricetta</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/recipe-form" routerLinkActive="active">Nuova Ricetta</a>
     </nav>
 
     <div class="search">
-        <input type="text" placeholder="Cerca ricetta..."
-               [ngModel]="recipeService.searchValue()"
-               (ngModelChange)="recipeService.setSearchValue($event)"
-        />
+        <input type="text" placeholder="Cerca ricetta..." [ngModel]="recipeService.searchValue()"
+            (ngModelChange)="recipeService.setSearchValue($event)" />
     </div>
 
 </header>

@@ -13,7 +13,7 @@ export class RecipeFormComponent {
 
   recipeService = inject(RecipeService);
 
-  recipe: Recipe = {
+  recipe = {
     id: 0,
     nome: '',
     ingredienti: '',

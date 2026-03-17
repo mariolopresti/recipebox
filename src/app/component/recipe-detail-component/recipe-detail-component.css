@@ -1,7 +1,18 @@
 .recipe-detail {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 24px;
+  background: #c53a081b;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.recipe-detail h2 {
+  margin-bottom: 16px;
+  font-size: 2rem;
+  color: #222;
 }
 
 .recipe-detail-image {
@@ -10,4 +21,70 @@
   border-radius: 16px;
   display: block;
   margin: 16px 0;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.facile {
+  background: linear-gradient(135deg, #00a000, #00c854);
+  padding: 6px;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.medio {
+  background: linear-gradient(135deg, #fbc02d, #ffeb3b);
+  padding: 6px;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.difficile {
+  background: linear-gradient(135deg, #d50000, #ff5252);
+  padding: 6px;
+  border-radius: 10px;
+  width: 20%;
+}
+
+.recipe-detail p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.recipe-detail strong {
+  color: #222;
+}
+
+.recipe-detail .difficulty-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .recipe-detail {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .recipe-detail-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .recipe-detail {
+    padding: 16px;
+    margin: 20px auto;
+  }
+
+  .recipe-detail h2 {
+    font-size: 1.6rem;
+  }
 }

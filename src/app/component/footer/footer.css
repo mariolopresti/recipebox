@@ -10,7 +10,7 @@
 
 .footer-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 40px 24px;
     flex-wrap: wrap;
     gap: 20px;

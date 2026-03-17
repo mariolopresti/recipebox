@@ -12,7 +12,8 @@
           <p><strong>Ingredienti:</strong> {{ recipie.ingredienti.join(', ') }}</p>
           <p><strong>Tempo:</strong> {{ recipie.tempoPreparazione }} min</p>
 
-          <p [ngClass]="{
+
+          <p (click)="filterDifficulty(recipie.difficolta)" [ngClass]="{
                   'facile': recipie.difficolta === 'Facile',
                   'medio': recipie.difficolta === 'Media',
                   'difficile': recipie.difficolta === 'Difficile'
@@ -22,6 +23,7 @@
 
           </p>
         </div>
+
       </div>
     </ng-container>
   </ng-container>

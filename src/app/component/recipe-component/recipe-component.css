@@ -22,10 +22,8 @@
 a {
     text-decoration: none;
     display: block;
-    /* importante per rimuovere spazio inline */
 }
 
-/* Hover effetto */
 .recipe-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
@@ -38,18 +36,12 @@ a {
     height: 220px;
     object-fit: cover;
     display: block;
-    /* rimuove lo spazio bianco */
 }
 
-/* Contenitore immagine-link */
 .recipe-card img {
     display: block;
-    /* assicura che anche eventuali immagini non inline siano block */
-    vertical-align: bottom;
-    /* ulteriore sicurezza */
 }
 
-/* Contenuto testo */
 .recipe-content {
     padding: 18px;
 }

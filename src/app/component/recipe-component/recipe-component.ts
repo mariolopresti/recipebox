@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { Recipe } from '../../interfaces/recipe';
 import { RouterLink } from '@angular/router';
 import { RecipeService } from '../../services/recipe-service';
@@ -10,16 +10,47 @@ import { DifficultyBadgeComponent } from '../difficulty-badge/difficulty-badge';
 
 @Component({
   selector: 'app-recipe-component',
-  imports: [RouterLink, FilterByName, DifficultyFilterComponent, FilterDifficulty, NgClass, DifficultyBadgeComponent],
+  imports: [
+    RouterLink,
+    FilterByName,
+    DifficultyFilterComponent,
+    FilterDifficulty,
+    NgClass,
+    DifficultyBadgeComponent,
+  ],
   templateUrl: './recipe-component.html',
   styleUrl: './recipe-component.css',
 })
 export class RecipeComponent {
   recipeService = inject(RecipeService);
-  recipes = this.recipeService.recipies;
+
+  recipes = signal<Recipe[]>([]);
+  loading = signal(false);
+  error = signal<string | null>(null);
+
+  constructor() {
+    this.loadRecipes();
+  }
+
+  loadRecipes() {
+    this.loading.set(true);
+    this.error.set(null);
+
+    this.recipeService.getRecipes().subscribe({
+      next: (data) => {
+        console.log('Ricette caricate:', data);
+        this.recipes.set(data);
+        this.loading.set(false);
+      },
+      error: (err) => {
+        console.error(err);
+        this.error.set('Errore nel caricamento delle ricette');
+        this.loading.set(false);
+      },
+    });
+  }
 
   filterDifficulty(level: string) {
     this.recipeService.setDifficultyValue(level);
   }
-
 }

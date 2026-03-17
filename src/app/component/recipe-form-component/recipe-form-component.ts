@@ -27,7 +27,18 @@ export class RecipeFormComponent {
   submitted: boolean = false;
 
   onSubmit(regForm: NgForm): void {
-    this.recipeService.addRecipe(regForm.value);
-    this.submitted = true;
+    //this.recipeService.addRecipe(regForm.value);
+    //this.submitted = true;
+
+    const newRecipe: Recipe = regForm.value;
+    this.recipeService.postRecipe(newRecipe).subscribe({
+      next: (data) => {
+        console.log('Ricetta aggiunta con successo:', data);
+        this.submitted = true;
+      },
+      error: (err) => {
+        console.error('Errore nell\'aggiunta ricetta', err);
+      },
+    });
   }
 }

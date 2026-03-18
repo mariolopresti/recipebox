@@ -1,59 +1,77 @@
-# Recipebox
+# 🍽️ RecipeBox – Raccolta di Ricette
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+Una web app sviluppata in **Angular 21** per la consultazione e la gestione di ricette culinarie, con un sistema completo di CRUD e autenticazione.
 
-## Development server
+---
 
-To start a local development server, run:
+## 👥 Team
+| Nome Cognome | Ruolo | Email |
+| :--- | :--- | :--- |
+| **Mario Lo Presti** | Frontend/Backend Developer | mlopresti084@gmail.com |
+| **Gaetano Nicotra** | Frontend/Backend Developer | nicotragaetano10@gmail.com |
 
+---
+
+## 📌 Descrizione del progetto
+RecipeBox consente agli utenti di esplorare un catalogo di ricette culinarie e gestire i propri piatti preferiti. L'applicazione si concentra sull'esperienza utente e sull'utilizzo delle ultime feature di Angular.
+
+**Cosa puoi fare:**
+* 🌐 Visualizzare un catalogo pubblico di ricette.
+* ⚖️ Filtrare le ricette per livello di difficoltà.
+* 📖 Accedere ai dettagli tecnici di ogni preparazione.
+* ➕ Aggiungere nuove ricette (area riservata).
+* 🗂️ Gestire il proprio ricettario personale.
+
+### 🎯 Obiettivo
+Mettere in pratica le funzionalità moderne di Angular (Signals, Standalone Components, New Control Flow) per fornire una piattaforma semplice, intuitiva e performante.
+
+---
+
+## ⚙️ Funzionalità principali
+- [x] **Lista ricette:** Visualizzazione asincrona dei contenuti.
+- [x] **Routing Dinamico:** Dettaglio ricetta su `/recipes/:id`.
+- [x] **Filtro Custom:** Direttiva strutturale personalizzata per la difficoltà.
+- [x] **Forms:** Inserimento ricette tramite *Template-driven forms*.
+- [x] **Signals:** Badge difficoltà gestiti con `input()` e `output()` signals.
+- [x] **Sicurezza:** Autenticazione utente e protezione delle rotte tramite `authGuard`.
+- [x] **Full CRUD:** Gestione completa dei dati tramite Angular Service e Fetch API.
+
+---
+
+## 🧱 Tecnologie utilizzate
+
+### Frontend
+* **Angular 21**
+* **TypeScript**
+* **HTML5 / CSS3**
+
+### Backend & Database
+* **Node.js + Express** 
+* **MySQL** 
+
+---
+
+## 🗺️ Routing dell'app
+| Path | Componente | Accesso |
+| :--- | :--- | :--- |
+| `/` | Lista ricette | Pubblico |
+| `/recipes/:id` | Dettaglio ricetta | Pubblico |
+| `/recipe-form` | Creazione ricetta | **Protetto** |
+| `/recipe-user` | Ricette utente | **Protetto** |
+| `/login` | Login | Pubblico |
+
+---
+
+## 🚀 Avvio in locale
+
+### 1. Frontend
 ```bash
+# Clonare il repository
+git clone
+cd recipebox
+
+# Installare le dipendenze
+npm install
+
+# Avviare il server di sviluppo
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

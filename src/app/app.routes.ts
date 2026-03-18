@@ -10,6 +10,7 @@ export const routes: Routes = [
   { path: '', component: RecipeComponent },
   { path: 'recipes/:id', component: RecipeDetailComponent },
   { path: 'recipe-form', component: RecipeFormComponent, canActivate: [authGuard] },
+  { path: 'recipe-form/:id', component: RecipeFormComponent, canActivate: [authGuard] },
   { path: 'recipe-user', component: RecipeUserComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
 ];

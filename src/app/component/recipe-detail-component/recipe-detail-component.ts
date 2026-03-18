@@ -23,19 +23,23 @@ export class RecipeDetailComponent {
 
   onDelete() {
     const currentRecipe = this.recipe();
-    console.log('ciao', currentRecipe);
     if (!currentRecipe) return;
-    else {
+
+    if (confirm(`Sei sicuro di voler eliminare "${currentRecipe.nome}"?`)) {
       this.recipeService.deleteRecipe(currentRecipe).subscribe({
         next: () => {
           console.log('Ricetta eliminata');
-          // Ricarichiamo la risorsa globale
           this.recipeService.recipies.reload();
-          // Torniamo alla home o alla lista ricette
           this.router.navigate(['/']);
         },
-        error: (err) => alert("Errore durante l'eliminazione"),
+        error: () => alert("Errore durante l'eliminazione"),
       });
     }
+  }
+
+  onEdit() {
+    const currentRecipe = this.recipe();
+    if (!currentRecipe) return;
+    this.router.navigate(['/recipe-form', currentRecipe.id]);
   }
 }

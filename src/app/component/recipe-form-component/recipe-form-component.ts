@@ -1,9 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Recipe } from '../../interfaces/recipe';
 import { RecipeService } from '../../services/recipe-service';
 import { AuthService } from '../../services/auth-service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-form-component',
@@ -12,13 +12,13 @@ import { Router } from '@angular/router';
   styleUrl: './recipe-form-component.css',
 })
 export class RecipeFormComponent {
-
   private router = inject(Router);
+  route = inject(ActivatedRoute);
   recipeService = inject(RecipeService);
   authService = inject(AuthService);
 
-  recipe = {
-    id: 0,
+  id = Number(this.route.snapshot.paramMap.get('id'));
+  recipe: Recipe = {
     nome: '',
     ingredienti: '',
     tempoPreparazione: 0,
@@ -27,6 +27,13 @@ export class RecipeFormComponent {
     descrizione: '',
     preparazione: '',
   };
+
+  constructor() {
+    const foundRecipe = this.recipeService.getRecipeById(this.id);
+    if (foundRecipe) {
+      this.recipe = foundRecipe;
+    }
+  }
 
   submitted: boolean = false;
 
@@ -37,19 +44,34 @@ export class RecipeFormComponent {
 
     const newRecipe: Recipe = {
       ...regForm.value,
+      id: this.id,
       id_user: userId, // Aggiungiamo l'id dell'utente loggato
     };
 
-    this.recipeService.postRecipe(newRecipe).subscribe({
-      next: (data) => {
-        console.log('Ricetta aggiunta con successo:', data);
-        this.submitted = true;
-        this.recipeService.recipies.reload();
-        this.router.navigate(['/recipe-user']);
-      },
-      error: (err) => {
-        console.error("Errore nell'aggiunta ricetta", err);
-      },
-    });
+    // id = 0 significa che non abbiamo il parametro id nel url, quindi voglio aggiungere una ricetta
+    if (this.id === 0) {
+      this.recipeService.postRecipe(newRecipe).subscribe({
+        next: (data) => {
+          console.log('Ricetta aggiunta con successo:', data);
+          this.submitted = true;
+          this.recipeService.recipies.reload();
+          this.router.navigate(['/recipe-user']);
+        },
+        error: (err) => {
+          console.error("Errore nell'aggiunta ricetta", err);
+        },
+      });
+    } else {
+      this.recipeService.editRecipe(newRecipe).subscribe({
+        next: (data) => {
+          console.log('Ricetta modifica con successo:', data);
+          this.submitted = true;
+          this.router.navigate([`/recipes/${this.id}`]);
+        },
+        error: (err) => {
+          console.error('Errore nella modifica della ricetta', err);
+        },
+      });
+    }
   }
 }

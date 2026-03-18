@@ -76,17 +76,12 @@
 }
 
 @media (max-width: 600px) {
-  footer {
-    gap: 0;
-    margin: 0;
-    padding: 10px 0;
-  }
 
-  .footer-section {
-    max-width: 100%;
-    flex: 1 1 100%;
-    margin: 0;
-    padding: 20px 0;
-  }
+    .footer-section {
+        max-width: 100%;
+        flex: 1 1 100%;
+        margin: 0;
+        padding: 20px 0;
+    }
 
 }

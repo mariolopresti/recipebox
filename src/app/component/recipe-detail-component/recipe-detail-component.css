@@ -87,7 +87,8 @@
 }
 
 .btn-edit {
-  background-color: #3498db; /* Blu per la modifica */
+  background-color: #3498db;
+  /* Blu per la modifica */
   color: white;
 }
 
@@ -97,7 +98,8 @@
 }
 
 .btn-delete {
-  background-color: #e74c3c; /* Rosso per la cancellazione */
+  background-color: #e74c3c;
+  /* Rosso per la cancellazione */
   color: white;
 }
 
@@ -121,12 +123,10 @@
 @media (max-width: 600px) {
   .recipe-detail {
     padding: 16px;
-    margin: 20px auto;
+    margin: 50px;
   }
 
   .recipe-detail h2 {
     font-size: 1.6rem;
   }
 }
-
-

@@ -13,7 +13,7 @@ h1 {
   color: #2c3e50;
 }
 
-form > div {
+form>div {
   margin-bottom: 30px;
 }
 
@@ -46,20 +46,17 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.25);
 }
 
-/* Messaggi (error/success) */
 .message-container {
   min-height: 1.1rem;
   margin-top: 0.25rem;
 }
 
-/* Messaggi di errore */
 .error {
   display: inline-block;
   font-size: 0.8rem;
   color: #e74c3c;
 }
 
-/* Messaggi di successo */
 .success {
   display: inline-block;
   font-size: 0.9rem;
@@ -82,20 +79,17 @@ button[type='submit'] {
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Hover attivo */
 button[type='submit']:hover:not(:disabled) {
   background-color: #2980b9;
   transform: translateY(-1px);
 }
 
-/* Stato disabled */
 button[type='submit']:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
   transform: none;
 }
 
-/* Un po’ di spazio per il messaggio finale */
 form .message-container:last-of-type {
   margin-top: 0.8rem;
   text-align: center;

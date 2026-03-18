@@ -79,3 +79,10 @@ p.error {
     margin-top: 1rem;
     text-align: center;
 }
+
+
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+}

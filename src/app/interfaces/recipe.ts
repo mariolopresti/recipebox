@@ -1,5 +1,5 @@
 export interface Recipe {
-  id: number;
+  id?: number;
   nome: string;
   ingredienti: string;
   tempoPreparazione: number;
@@ -7,5 +7,5 @@ export interface Recipe {
   immagine: string;
   descrizione: string;
   preparazione: string;
-  id_user: number;
+  id_user?: number;
 }

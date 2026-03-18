@@ -1,4 +1,10 @@
-<h1>Inserisci una nuova ricetta!</h1>
+<h1>
+  @if (id === 0) {
+    <span>Inserisci una nuova ricetta!</span>
+  } @else {
+    <span>Modifica la tua ricetta: {{recipe.nome}}</span>
+  }
+</h1>
 
 <form #regForm="ngForm" (ngSubmit)="onSubmit(regForm)">
   <!-- NOME -->
@@ -99,7 +105,11 @@
   </div>
 
   <!-- SUBMIT -->
-  <button type="submit" [disabled]="regForm.invalid">Inserisci ricetta!</button>
+  @if (id === 0) {
+    <button type="submit" [disabled]="regForm.invalid">Inserisci ricetta!</button>
+  } @else {
+    <button type="submit" [disabled]="regForm.invalid">Salva le modifiche!</button>
+  }
   <div class="message-container">
     @if (submitted) {
     <span class="success">Nuova ricetta inserita!</span>

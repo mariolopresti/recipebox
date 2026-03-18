@@ -45,9 +45,18 @@ nav a:hover {
   font-size: 16px;
   background-color: white;
   border-radius: 10px;
-  padding: 5px 10px;
+  padding: 8px 12px;
+  border: 0px;
 }
 
+h2 {
+  text-decoration: none;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
 
 .login:hover {
   cursor: pointer;
@@ -67,22 +76,69 @@ nav a:hover {
   font-weight: 400;
 }
 
-@media (max-width: 1100px) {
-  .header {
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-  }
-}
 
-@media (max-width: 690px) {
+@media (max-width: 768px) {
   .header {
     flex-direction: column;
-    gap: 25px;
+    align-items: stretch;
+    gap: 16px;
+    padding: 20px 16px;
+  }
+
+  .header h2 {
+    text-align: center;
+    margin: 0;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .nav a {
+    margin: 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header .login,
+  .user-info {
+    width: 100%;
+    text-align: center;
   }
 
   .user-info {
+    display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: stretch;
+  }
+
+  .user-info button,
+  .user-info a {
+    width: 100%;
+  }
+
+  .user-info span {
+    display: none;
+  }
+
+  .user-info .login {
+    width: auto;
+    align-self: center;
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 8px;
   }
 }

@@ -65,7 +65,6 @@ export class RecipeService {
   }
 
   setDifficultyValue(value: string): void {
-    console.log('set difficulty value: ', value);
     this.selectedDifficulty.set(value);
   }
 

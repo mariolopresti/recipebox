@@ -29,7 +29,6 @@ export class RecipeComponent {
 
     this.recipeService.getRecipes().subscribe({
       next: (data) => {
-        console.log('Ricette caricate:', data);
         this.recipes.set(data);
         this.loading.set(false);
       },

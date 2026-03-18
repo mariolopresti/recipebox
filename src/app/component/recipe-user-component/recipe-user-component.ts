@@ -26,7 +26,7 @@ export class RecipeUserComponent {
     return all?.filter((recipe) => recipe.id_user === user.id);
   });
 
-  constructor() {
-    console.log('user recipes', this.userRecipes());
-  }
+  // constructor() {
+  //   console.log('user recipes', this.userRecipes());
+  // }
 }

@@ -67,7 +67,7 @@ Mettere in pratica le funzionalità moderne di Angular (Signals, Standalone Comp
 ### 1. Frontend
 ```bash
 # Clonare il repository
-git clone
+git clone https://github.com/mariolopresti/recipebox.git
 cd recipebox
 
 # Installare le dipendenze
@@ -80,9 +80,13 @@ ng serve
 ### 2. Backend
 ```bash
 # Clonare il repository backend
-git clone 
+git clone https://github.com/mariolopresti/recipebox-server.git
 cd recipebox-server
 
 # Installare e avviare
 npm install
-npm start
+node serve.js
+
+#credenziali
+username: user
+password: 123456

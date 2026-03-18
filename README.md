@@ -75,3 +75,14 @@ npm install
 
 # Avviare il server di sviluppo
 ng serve
+```
+
+### 2. Backend
+```bash
+# Clonare il repository backend
+git clone 
+cd recipebox-server
+
+# Installare e avviare
+npm install
+npm start

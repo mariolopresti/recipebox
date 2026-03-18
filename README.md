@@ -47,7 +47,7 @@ Mettere in pratica le funzionalità moderne di Angular (Signals, Standalone Comp
 
 ### Backend & Database
 * **Node.js + Express** 
-* **MySQL** 
+* **MySQL** ospitato su **FreeSQLDatabase**
 
 ---
 

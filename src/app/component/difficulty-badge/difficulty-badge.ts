@@ -12,7 +12,8 @@ export class DifficultyBadgeComponent {
 
   badgeClick = output<string>();
 
-  onClick() {
+  onClick(event: MouseEvent) {
+    event.stopPropagation();
     this.badgeClick.emit(this.level());
   }
 

@@ -16,3 +16,10 @@
 } @else {
 <p>Ricetta non trovata.</p>
 }
+
+@if (authService.currentUser()) {
+  <div class="recipe-actions">
+    <button class="btn-action btn-edit">Modifica</button>
+    <button class="btn-action btn-delete" (click)="onDelete()">Cancella</button>
+  </div>
+}

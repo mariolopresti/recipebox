@@ -65,6 +65,46 @@
   color: black;
 }
 
+.recipe-actions {
+  max-width: 300px;
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  border-top: 1px solid #eee;
+  justify-content: center;
+  margin: auto;
+}
+
+.btn-action {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  flex: 1;
+}
+
+.btn-edit {
+  background-color: #3498db; /* Blu per la modifica */
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background-color: #e74c3c; /* Rosso per la cancellazione */
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+}
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -88,3 +128,5 @@
     font-size: 1.6rem;
   }
 }
+
+

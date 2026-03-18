@@ -37,7 +37,7 @@ export class RecipeService {
     );
   }
 
-  /*  // ... existing code ...
+  /* ...
   recipies = signal<Recipe[]>([
     {
       id: 1,
@@ -233,6 +233,30 @@ export class RecipeService {
         'Ingredienti: 200 g biscotti secchi, 100 g burro fuso, 300 g formaggio cremoso, 100 g zucchero, 150 g frutti di bosco. Mescola biscotti tritati e burro e crea la base. Aggiungi crema di formaggio e zucchero. Decora con frutti di bosco e lascia in frigo.',
     },
   ]);*/
+
+  // DELETE: cancella una ricetta dal backend
+  deleteRecipe(recipe: Recipe): Observable<void> {
+    const url = `${this.apiUrl}/delete/${recipe.id}`;
+
+    return this.http.delete<void>(url).pipe(
+      catchError((err) => {
+        console.error('Errore nella cancellazione ricetta', err);
+        return throwError(() => new Error("Errore durante l'eliminazione della ricetta."));
+      }),
+    );
+  }
+
+  // EDIT: edit una ricetta dal backend
+  editRecipe(recipe: Recipe): Observable<Recipe> {
+    const url = `${this.apiUrl}/edit/${recipe.id}`;
+
+    return this.http.put<Recipe>(url, recipe).pipe(
+      catchError((err) => {
+        console.error('Errore nella modifica della ricetta', err);
+        return throwError(() => new Error("Errore durante la modifica della ricetta."));
+      }),
+    );
+  }
 
   setSearchValue(value: string): void {
     this.searchValue.set(value);

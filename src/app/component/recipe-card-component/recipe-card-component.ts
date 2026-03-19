@@ -19,6 +19,11 @@ export class RecipeCardComponent {
 
   recipe = input.required<Recipe>();
 
+  onDifficultyClick(event: MouseEvent, level: string) {
+    event.stopPropagation();
+    this.filterDifficulty(level);
+  }
+
   filterDifficulty(level: string) {
     this.recipeService.setDifficultyValue(level);
   }
